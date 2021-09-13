@@ -1,0 +1,484 @@
+@charset "utf-8";
+
+/*font*/
+@import 
+url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+@font-face {
+	font-family: '나눔스퀘어';
+	src:url(../../../assets/fonts/NanumSquareOTFRegular.woff)
+}
+
+/*Common*/
+body {
+	font-family: 'Open-Sans','나눔스퀘어','맑은 고딕','돋움',sans-serif;font-size: 16px;color: #333;
+}
+button {
+	background: none;margin: 0;padding: 0;border: none;line-height: 1;vertical-align: middle;cursor: pointer;
+}
+.container {
+	padding: 0 3%;
+}
+.container:after {
+	content:"";display: block;clear: both;
+}
+.blind { /*IR 기법 중 html 문서에 텍스트로 작성된 내용을 보이지 않게 하기 위함*/
+	display: block;/*인라인 요소에서 사용할 경우, width와 height 속성이 적용되지 않아서*/
+	width: 0;height: 0;/*화면에 보이지 않게 작은 박스로 만드는 것*/
+	overflow: hidden;/*박스가 작아져서 텍스트는 넘쳐서 보이기 때문에 넘친 텍스트 안 보이게*/
+	visibility:hidden;/*화면에 보이고 안 보이는 속성을 안 보이게 처리*/
+}
+.focus_txt2 {
+	color: #01c5fc;
+}
+
+/*Skip_nav*/
+#skip_nav a {
+	display: block;position: absolute;left: 0;right: 0;top: -40px;
+	background: #666;color: #fff;
+	font-size: 16px;text-align: center;line-height: 40px;z-index: 9999;
+}
+#skip_nav a:focus {
+	top:0;
+}
+
+/*popup*/
+#popup {
+	position: relative;/*자손 button 태그 포지션의 기준이 되기 위해*/
+	overflow: hidden;/*자손 a 태그의 플로팅 클리어하기 위해*/
+}
+#popup a {
+	display: block;
+}
+#popup a img {
+	display: block;margin: auto;
+}
+#popup a:nth-child(1) {
+	background: #343233;
+}
+#popup a:nth-child(2) {
+	background: #3C4260;
+}
+#popup button {
+	position: absolute;right: 20px;top: 50%;transform: translateY(-50%);
+	padding: 8px 10px;
+	background: rgba(255,255,255,0.5);cursor: pointer;
+}
+
+/*위로 버튼*/
+#gotop {
+	position: fixed;right: 20px;bottom: 20px;
+}
+
+/*header*/
+#wrap {
+	position: relative;
+}
+#header {
+	position: absolute;
+	background: #FFF;
+	border-bottom: 1px solid #ccc;z-index: 100;
+}
+#header h1 a {
+/*클릭이 되어야 하기 때문에 이미지 크기의 면적은 a태그*/
+	display: block;
+}
+/* #header #gnb>li:nth-child(1) .dep_2>li {
+	margin-right: 65px;
+}
+#header #gnb>li:hover .dep_2 {
+	display: block;
+} */
+
+#header .evt_link {
+	display:none;
+	width: 150px;height: 60px;padding-top: 10px;margin-left: 30px;float: right;
+	box-sizing: border-box;background: url(../img/bg_header_event.png);
+	line-height: 20px;text-align: center;color: #FFF;
+}
+/*
+글자 세로 정렬 방법
+- 한 줄일 경우 line-height
+- 여러줄일경우 display:table-cell속성을 사용하는 방법도 있는데 잘 사용하지 않음
+- line-height와 font-size값을 계산해서 padding 값으로 위아래 나눠주고 box-sizing을 border-box속성으로 줌
+(box-sizing이 content-box인 경우 padding 값을 줄 경우 height값도 그 값만큼 줄어야 함)
+*/
+
+/* 디자인 확인용
+#header #gnb>li:nth-child(1) .dep_2{
+	display: block;
+} */
+
+#header .util {
+	display: none;margin-top: 22px;float: right;font-size: 14px;
+}/*전체 크기 60px - 글자 크기 14px = 46px (반 나누면 23px, 글자가 아래로 좀더 내려와 있어서 22px)*/
+
+/*가상요소를 이용한 구분선*/
+#header .util li {
+	float: left;
+}
+#header .util li:after {
+	content:"";display:block;
+	width: 1px;height: 10px;margin:3px 12px;float: right;
+	background: #d7d7d7;
+}
+#header .util li:last-child:after {display: none;}/*li의 가상요소 after의 막내요소*/
+#header .util li a:hover {
+	text-decoration: underline;
+}
+
+/* li의 구분선을 배경 이미지로 사용하는 방법
+#header .util li {
+	padding: 0 13px 0 12px;background: url(../img/bg_line_d7d7d7.png)no-repeat right 2px;
+}
+bg의 오른쪽 padding을 12px로 주면 bg의 border 영역을 1px로 잡기 때문에 11px로 적용되어 오른쪽 여백이 왼쪽 여백보다 더 짧음
+따라서 오른쪽은 1px 더해서 13px, 왼쪽은 12px로 하면 양쪽 여백 간격이 똑같음(bg는 padding을 포함하기 때문)
+
+#header .util li:last-child {
+	padding-right: 0;background: none;
+} */
+
+
+/*main*/
+
+/*메인 - visual*/
+.visual_wrap {
+	position: relative;height: 537px;
+}
+.visual_wrap .visual_slider .slide {
+	position: absolute;left: 0;right: 0;top: 0;
+	height: 537px;padding-top: 150px;box-sizing:border-box;
+	background-repeat: no-repeat;background-position: center;
+	z-index: 1;
+	/*z-index를 주지 않으면 화면이 슬라이드 될 때 흰 배경이 보일 수 있기 때문에 보여야 되는 슬라이드는 z-index 2를 주고 나머지는 1을 줌*/
+}
+.visual_wrap .visual_slider .slide_1 {
+	background-image: url(../img/main_visual_img1_2020.png);z-index: 2;
+}
+.visual_wrap .visual_slider .slide_2 {
+	background-image: url(../img/main_visual_img_genietalkgo2_bg2.png)
+}
+.visual_wrap .visual_slider .slide_3 {
+	background-image: url(../img/main_visual_img_startup.png);
+	background-color: #f8f8f8;
+}
+.visual_wrap .visual_slider .slide_4 {
+	background-image: url(../img/main_visual_img2.jpg)
+}
+.visual_wrap .visual_slider .slide_5 {
+	background-image: url(../img/main_visual_img_taja.png)
+}
+.visual_wrap .visual_slider .slide_6 {
+	background-image: url(../img/main_visual_img6.png)
+}
+
+.vis_btn_wrap {
+	position: absolute;left: 0;right: 0;bottom: 110px;z-index: 10;text-align: center;/**/
+	/*word-spacing: -0.5em;버튼은 인라인 블럭인데 사이 여백이 생기는 걸 없애고자 준 속성이지만 매번 값을 알기는 힘들기 때문에 현재는 쓰지 않고 대신 버튼에 마진 라이트 값을 줌*/
+}
+.vis_btn_wrap button {
+	width: 10px;height: 10px;border-radius: 50%;
+	margin:0 5px;/*한쪽만 마진을 주면 정가운데에 오지 않고 치우치기 때문에 줘야할 값 10을 반으로 나눠서 양쪽에 줌*/ 
+	background: #fefefe;
+	box-shadow: 0 3px 3px rgba(0,0,0,0.3);
+}
+.slide_on {
+	background: #939393 !important;
+} /*태그에는 우선순위가 있는데 .slide_on태그만 쓰면 태그명을 상세하게 쓴 다른 우선순위에 밀려 적용되지 않음 이를 해결하기 위해 .vis_btn_wrap .slide_on라는 상세한 경로를 사용한다면 추후 .slide_on이라는 태그를 아래에서 사용한다면 그 경우에도 경로를 상세히 써야함 
+이를 해결하기 위해 !important로 사용하여 속성을 적용함 단, important는 상당히 강력하기 때문에 남용해서는 안 됨
+*/
+
+
+.product_info_wrap {
+	position: relative;z-index: 5;
+	height: 85px;margin-top: -85px;background: rgba(0,0,0,0.1);
+	text-align: center;
+}
+.product_info {
+	position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);
+	width: 650px;padding: 15px 0;background: #fff;
+	border-radius: 5px;border-bottom: 1px solid #ccc;
+}
+.product_info a {
+	display: inline-block;text-align: center;font-weight: bold;
+}
+.product_info a:nth-child(1) {
+	width: 70%;border-right: 1px solid #DDD;
+}
+.product_info a:hover {
+	color: #0a56a8;
+}
+.product_info a:nth-child(2) {
+	width: 25%;
+}
+.product_info span {color: #0a56a8;margin-left: 15px;}
+
+/*메인 - quick-menu*/
+.quick_menu_wrap {
+	padding: 80px 0;
+}
+.quick_menu_wrap li {
+	float: left;text-align: center;
+}
+.quick_menu_wrap li .quick_txt {
+	display: block;
+}
+.quick_menu_wrap li .quick_icon {
+	display: inline-block;
+	width: 64px;height: 42px;
+	background-image: url(../img/bg_main_lnk.png);
+	margin-bottom: 15px;
+}
+.quick_menu_wrap li:nth-child(2) .quick_icon {
+	background-position: 0 -200px;
+}
+.quick_menu_wrap li:nth-child(3) .quick_icon {
+	background-position: 0 -400px;
+}
+.quick_menu_wrap li:nth-child(4) .quick_icon {
+	background-position: 0 -600px;
+}
+.quick_menu_wrap li:nth-child(5) .quick_icon {
+	background-position: 0 -800px;
+}
+.quick_menu_wrap li:hover .quick_txt{
+	color: #015feb;
+}
+.quick_menu_wrap li:hover .quick_icon {
+	background-image: url(../img/bg_main_lnk_on.png);
+}
+}
+
+/*제품 리스트(product_list_wrap)*/
+.product_list_wrap {}
+.product_list_wrap li {
+	float: left;margin-right: 20px;
+}
+.product_list_wrap li:nth-child(3) {
+	margin-right: 0;
+}
+.product_list_wrap li a {
+	display: block;background-size: 100% auto;
+}
+.product_list_wrap li:nth-child(1) a {
+	background-image: url(../img/prod_1.jpg);
+}
+.product_list_wrap li:nth-child(2) a {
+	background-image: url(../img/prod_2.jpg);
+}
+.product_list_wrap li:nth-child(3) a {
+	background-image: url(../img/prod_3.png);
+}
+.product_list_wrap li:nth-child(1) a:hover {
+	background-image: url(../img/prod_1_on.jpg);
+}
+.product_list_wrap li:nth-child(2) a:hover {
+	background-image: url(../img/prod_2_on.jpg);
+}
+.product_list_wrap li:nth-child(3) a:hover {
+	background-image: url(../img/prod_3_on.png);
+} /*li의 첫째,둘째,셋째 중 a를 hover 하면 이미지가 바뀜
+	이 경우에는 a 자체에 width와 heigh가 있기 때문에 a를 hover 해도 됨
+*/
+
+/*게시판 목록*/
+.board_wrap {
+	padding: 90px 0;
+}
+.board {
+	width: 50%;float: left;
+	box-sizing: border-box;
+}
+.board_wrap .board h2 {
+	margin-bottom: 30px;font-size: 20px;font-weight: bold;
+}
+.notice {
+	position: relative;padding-right: 30px;border-right: 1px solid #AAA;
+}
+.notice li {
+	height: 35px;
+}
+.notice li:hover span{
+	text-decoration: underline;
+}
+.notice li:last-child {
+	height: auto;
+}
+/*height를 선언하지 않으면 자손크기로 되며, auto로 하면 dafault 값
+li의 heigh값을 잡아줘서 board 값이 길어졌기 때문에 막내 li값을 선언하지 않은 것임
+*/
+.notice li a {
+	display: block;overflow: hidden;
+}
+.notice li a span {
+	display: block;
+}
+.notice li span.noti_txt {
+	width: calc(100% - 120px);/*텍스트의 길이가 가변하도록 전체 크기 100퍼센트에서 date의 width값을 뺀 길이가 txt의 길이*/
+	float: left;
+	overflow: hidden;white-space:nowrap;text-overflow: ellipsis;
+}
+.notice li span.noti_date {
+	float: right;
+}/*
+width: 120px; 값을 줬기 때문에 글자 크기보다 남는 여백이 생김
+만약 width값이 꼭 필요한 상황이 아닐 경우, float:right를 했을 때 오른쪽에 딱 달라붙기 때문에 남는 여백이 사라짐
+*/
+.notice .noti_more_btn {
+	position: absolute;right: 30px;top: 0;
+} /*
+position:absolute 했을 때 padding은 겹쳐지지만 border는 겹쳐지지 않음
+margin 밖으로도 나가지 않음
+ 
+right는 padding 30px 값을 주면 date끝쪽 선에 맞으며
+top 값의 경우 h2 크기의 가운데에 위치시키기 위해 h2 크기 18px(약 20px)와 img 본인 크기 10px을 빼면 10px이 남고 
+그 값의 반으로 나누어 주면 가운데에 위치, 따라서 top 값은 5px 
+
+다만, 이 경우 top 값을 0으로 잡아줘야 위치상 맞는 것으로 보임
+*/
+
+.event {
+	padding-left: 30px;
+}
+.event ul {
+	display: none;
+}
+.event p {
+	height: 120px;/* padding-top: 33px;box-sizing:border-box; */
+	border: 1px solid #AAA;text-align: center;line-height: 120px;
+}/*높이값에 img 높이값을 빼서 남은 값을 2로 나눈 값이 33px 
+	다만 그럴 경우 높이값이 길어지는 문제가 생겨서 box-sizing을 border-box로 설정
+
+	한 줄일경우에는 line-heigh값으로 설정할 수도 있음
+*/
+.event p img {
+	vertical-align: middle;
+}
+
+/*footer*/
+#footer {
+	padding-bottom: 80px;background: #494949;color: #FFF;
+}
+#footer:before {
+	content:"";display: block;background: #00a2e5 url(../img/bg_footline.png)no-repeat right top;
+	height: 4px;margin-bottom: 40px;
+}
+#footer .corp_info_wrap {
+	float: left;
+}
+#footer .corp_info_wrap dl {
+	width: 450px;margin-bottom: 40px;overflow: hidden;
+}
+#footer .corp_info_wrap dt {
+	width: 90px;margin-bottom: 20px;float: left;font-weight: bold;
+}
+#footer .corp_info_wrap dd {
+	margin-right: 30px;margin-bottom: 20px;float: left;color: #ccc;
+}
+#footer .corp_info_wrap dd:hover {
+	text-decoration: underline;
+}
+
+#footer .corp_info_wrap .footer_menu {
+	overflow: hidden;color: #DDD;
+}
+#footer .corp_info_wrap .footer_menu li{
+	margin-right: 25px;margin-bottom: 25px;float: left;
+}
+#footer .corp_info_wrap .footer_menu li:hover {
+	color: #FFF;
+}
+#footer .corp_info_wrap .footer_menu li.focus_txt2:hover {
+	color: #9eeafe;
+}
+
+#footer .corp_info_wrap address {
+	margin-bottom: 10px;font-size: 14px;line-height: 1.5em;color: #CCC;
+}
+#footer .corp_info_wrap address br.mo {display: none;}
+#footer .corp_info_wrap .copyright {
+	font-size: 14px;color: #CCC;
+}
+#footer .footer_util_wrap {
+	float: right;color: #333;
+}
+#footer .footer_util_wrap .footer_etc {
+	width: 200px;margin-bottom: 80px;position: relative;
+}
+.lan, .zoom_control, .fam_site {
+	height: 25px;margin-bottom: 3px;background: #FFF;border: 1px solid #DDD;
+	box-sizing: border-box;
+}
+#footer .footer_util_wrap .footer_etc ul.lan {
+	position: absolute;left: 0;top: 0;z-index: 10;width: 127px;height: 25px;float: left;overflow: hidden;
+}
+#footer .footer_util_wrap .footer_etc ul.lan:hover {
+	height: 50px;top: -25px;
+}
+#footer .footer_util_wrap .footer_etc .lan li {
+	line-height: 25px;
+}
+#footer .footer_util_wrap .footer_etc .zoom_control {
+	width: 70px;float: right;padding-top: 2px;text-align: center;
+}
+#footer .footer_util_wrap .footer_etc .zoom_control button {
+	height: 12px;margin: 0 2px;background-image: url(../img/ico_zoom_family.png);
+	cursor: pointer;
+}
+#footer .footer_util_wrap .footer_etc .zoom_control .zoom_in{
+	width: 8px;background-position: 0 0;
+}
+#footer .footer_util_wrap .footer_etc .zoom_control .refresh {
+	width: 14px;background-position: -17px 0;
+}
+#footer .footer_util_wrap .footer_etc .zoom_control .zoom_out {
+	width: 8px;background-position: -39px 0;
+}
+
+#footer .footer_util_wrap .footer_etc .fam_site {
+	position: relative;clear: both;text-indent: 10px;z-index: 100;
+}
+#footer .footer_util_wrap .footer_etc .fam_site button {
+	display: block;width: 100%;height: 100%;
+	text-align: left;text-indent: 10px;font-family: inherit;
+	background: url(../img/bg_dropdown.png) no-repeat right 10px center;
+}
+#footer .footer_util_wrap .footer_etc .fam_site ul {
+	display: none;position: absolute;left: -1px;right: -1px;bottom: 26px;
+	background: #FFF;text-indent: 10px;
+}/*
+left와 right가 -1px 나가는 이유 
+position:absolute는 왼쪽 상단 위에서 0,0으로 시작하는데 padding값까지는 포함해서 시작하지만 border 영역을 넘지는 못함
+부모 박스 안에 패딩과 border가 잡혀 있는데, 이를 아래로 열리는게 아니라 위쪽 상단으로 올려서 위치시키기 위해 border 영역을 넘겨서 잡아야 함
+양쪽에 잡혀있는 1씩의 border를 넘기 위해 양쪽에 -1px씩을 주고 bottom값에 fam_site의 높이값과 border 1px을 합한 숫자를 입력하면 border영역을 넘어가며 상단으로 올라감 
+*/
+#footer .footer_util_wrap .footer_etc .fam_site li {
+	line-height: 2em;
+}
+#footer .footer_util_wrap .footer_etc .fam_site li:hover {
+	background: #0a56a8;color: #FFF;
+}
+#footer .footer_util_wrap .footer_etc .sns_list {
+	position: absolute;left: -73px;bottom: 0;
+}
+#footer .footer_util_wrap .footer_etc .sns_list li {
+	width: 26px;margin-left: 5px;float: left;
+}
+#footer .external_link a {
+	margin-left: 15px;
+}
+
+/*
+	코딩시 한 번 사용한 선택자를 두 번 사용하면 안 됨 
+	또한 부모 > 자손
+	형 > 동생 순으로 사용
+*/
+
+/* 컬러정보
+color:#0a56a8;
+cyan color: #01c5fc;
+*/
+
+/*
+gnb 서브 리스트
+- 비주얼 컨트롤 버튼
+*/

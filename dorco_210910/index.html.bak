@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>도루코</title>
+   <link rel="shortcut icon" href="img/main/dorco_logo.ico">
+
+   <link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/rwd.css">
+	<script src="https://use.fontawesome.com/b08d13e1a1.js"></script>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script type="text/javascript" src="http://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+   <script src = "js/main.js"></script>
+</head>
+<body>
+   <div id="skip_nav">
+      <a href="#main">본문 바로가기</a>
+   </div><!--//#skip_nav-->
+   <div id="wrap">
+      <header id="header">
+         <div class="container clrfix">
+            <h1><a href="index.html"><span class="blind">도루코</span></a></h1>
+            <div class="mo_allmenu_wrap">
+               <button class="allmenu_btn">
+                  <span class="bar_top"></span>
+                  <span class="bar_middle"></span>
+                  <span class="bar_bottom"></span>
+               </button>
+            </div>
+            <nav class="clrfix">
+               <a href="index.html"><span class="mo_logo"></span></a>
+               <button class="mo_gnb_close"></button>
+               <ul id="gnb">
+                  <li><a href="#">도루코</a>
+                     <ul class="dept2">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">연혁</a></li>
+                        <li><a href="#">해외법인</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#">제품소개</a>
+                     <ul class="dept2">
+                        <li><a href="#">남성용 면도기</a></li>
+                        <li><a href="#">여성용 면도기</a></li>
+                        <li><a href="#">면도 보조용품</a></li>
+                        <li><a href="#">구매 가이드</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#">홍보센터</a>
+                     <ul class="dept2">
+                        <li><a href="#">보도자료</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">홍보 동영상</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#">윤리경영</a>
+                     <ul class="dept2">
+                        <li><a href="#">클린 도루코</a></li>
+                        <li><a href="#">윤리규범 / 활동</a></li>
+                        <li><a href="#">개선 / 신고 / 제보</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#">고객지원</a>
+                     <ul class="dept2">
+                        <li><a href="#">고객 FAQ</a></li>
+                        <li><a href="#">고객의 소리</a></li>
+                        <li><a href="#">면도 가이드</a></li>
+                     </ul>
+                  </li>
+               </ul>
+               <a href="#" target="_blank" class="recruit_link">채용</a>
+               <ul class="lang">
+                     <li><a href="#">KOR</a></li>
+                     <li class="lang_click"><a href="#">ENG</a></li>
+                     <li class="lang_click"><a href="#">JPN</a></li>
+               </ul>
+            </nav>
+         </div><!--//container-->
+      </header><!--//header-->
+      <main id="main">
+         <section class="visual_wrap">
+            <div class="main_slider">
+               <div class="slider_box clrfix">
+                  <div class="slide slide_1"><video src="doco_cf_video.mp4" muted loop autoplay></video></div><!--//slide_1-->
+                  <div class="slide slide_2">
+                     <img src="img/main/cf-behind-02.jpg" alt="비주얼 첫번째 사진">
+                  </div><!--//slide_2-->
+                  <div class="slide slide_3">
+                    <img src="img/main/1VQVVG98CJ_2.jpg" alt="비주얼 두번째 사진">
+                  </div><!--//slide_3-->
+                  <div class="slide slide_4">
+                     <img src="img/main/Man_shaving.jpg" alt="비주얼 세번째 사진">
+                  </div><!--//slide_4-->
+									<div class="visual_txt">
+										<p>고객의 행복과 함께 성장하는 기업</p>
+										<strong>DORCO</strong>
+									</div><!--//visual_txt-->
+               </div><!--//slider_box-->
+
+
+               <!--플러그인 사용-->
+               <div class="slide_container">
+                  <div class="slide_controls">
+                     <div class="controls">
+                        <button class="prev_btn"><span class="blind">이전 보기</span></button>
+                        <button class="next_btn"><span class="blind">다음 보기</span></button>
+                     </div><!--//controls-->
+                     <div class="paging">
+                        <button class="btn1"><span class="blind">1번째 슬라이드</span></button>
+                        <button class="btn2"><span class="blind">2번째 슬라이드</span></button>
+                        <button class="btn3"><span class="blind">3번째 슬라이드</span></button>
+                     </div><!--//paging-->
+                  </div><!--//slide_controls-->
+               </div><!--//slide_container-->
+               <!--플러그인 에서 사용하고 삭제-->
+
+            </div><!--//visual_slider-->
+         </section><!--//visual_wrap-->
+         <section class="quick_menu_wrap">
+						<div class="container">
+							<h2 class="blind">QUICK MENU</h2>
+							<ul class="clrfix">
+								 <li><a href="#"><span class="quick_icon"></span></--><span>홍보동영상</span></a></li>
+								 <li><a href="#"><span class="quick_icon"></span><span>면도이야기</span></a></li>
+								 <li><a href="#"><span class="quick_icon"></span><span>브로슈어</span></a></li>
+								 <li><a href="#"><span class="quick_icon"></span><span>자주하는질문</span></a></li>
+								 <li><a href="#"><span class="quick_icon"></span><span>고객의소리</span></a></li>
+							</ul>
+						</div>
+         </section><!--//quick_menu_wrap-->
+         <section class="product_wrap">
+            <div class="container">
+               <h2>PRODUCT</h2>
+               <div class="tabs">
+                  <ul class="product_name clrfix">
+                     <li><a href="#">남성</a></li>
+                     <li><a href="#">여성</a></li>
+                     <li><a href="#">면도 보조용품</a></li>
+                  </ul>
+               </div><!--//tabs-->
+               <div class="product_line">
+                  <div class="product roduct_list1">
+                     <ul>
+                        <li>
+                           <a href="#">
+                              <img src="img/main/product/Pace-3-Back.png" alt="PACE 3">
+                              <storong>PACE 3</storong>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img src="img/main/product/product_man_pace3dmotion.jpg" alt="PACE 3D MOTION">
+                              <storong>PACE 3D MOTION</storong>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img src="img/main/product/Pace-7-1.png" alt="PACE 7">
+                              <storong>PACE 7</storong>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img src="img/main/product/pace6style.png" alt="PACE 6 Style">
+                              <storong>PACE 6 Style</storong>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img src="img/main/product/product_man_pace6.jpg" alt="PACE 6">
+                              <storong>PACE 6</storong>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img src="img/main/product/product_man_pacepower.jpg" alt="PACE POWER">
+                              <storong>PACE POWER</storong>
+                           </a>
+                        </li>
+                     </ul>
+                  </div><!--//product_list1-->
+                  <div class="product product_list2">
+                     <ul>
+                        <li><a href="#"><img src="img/main/product/product_woman_ shaireina.png" alt="Shai Reina"><strong>Shai Reina</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_woman_shaisweetie.png" alt="Shai Sweetie"><strong>Shai Sweetie</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_woman_shai3.png" alt="Shai3"><strong>Shai3</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_woman.shai_moisture.png" alt="Shai Moisture"><strong>Shai Moisture</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_woman_shaisimple.png" alt="Shai Simple"><strong>Shai Simple</strong></a></li>
+                     </ul>
+                  </div><!--//product_list2-->
+                  <div class="product product_list3">
+                     <ul>
+                        <li><a href="#"><img src="img/main/product/product_other_01_intensiverepairfoam.jpg" alt="Internsive Repair FOAM"><strong>Internsive Repair FOAM</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_other_refreshingfoam.png" alt="Refreshing FOAM"><strong>Refreshing FOAM</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_other_mcare.jpg" alt="M CARE"><strong>M CARE</strong></a></li>
+                        <li><a href="#"><img src="img/main/product/product_sensitivefoam.jpg" alt="Sensitive FOAM"><strong>Sensitive FOAM</strong></a></li>
+                     </ul>
+                  </div><!--//product_list3-->
+               </div><!--//product_line-->
+               <div class="product_controls">
+                  <button class="product_prev"><span class="blind">이전보기</span></button>
+                  <button class="product_next"><span class="blind">다음보기</span></button>
+               </div><!--//product_controls-->
+            </div><!--//container-->
+         </section><!--//product_wrap-->
+         <section class="clean_dorco_wrap">
+            <div class="container">
+               <h2>CLEAN DORCO</h2>
+               <p>도루코는 윤리적, 사회적 책임을 다하는 기업으로 <br> 우리 모두가 성장하여 발전해 나아갈 수 있는 상생의 경영을 추진하고 있습니다.</p>
+               <ul>
+                  <li><a href="#"><span>회사소개</span></a></li>
+                  <li><a href="#"><span>윤리경영</span></a></li>
+                  <li><a href="#"><span>윤리서약</span></a></li>
+                  <li><a href="#"><span>사회공헌</span></a></li>
+               </ul>
+            </div><!--//container-->
+         </section><!--//clean_dorco_wrap-->
+         <section class="recruit_wrap">
+            <div class="container">
+               <h2>RECRUIT</h2>
+               <p>도루코와 함께 발전할 인재를 기다립니다.</p>
+               <div class="people">
+                  <a href="#">
+                     <img src="img/main/recruit_icon1.png" alt="인재상">
+                     <em>인재상</em>
+                  </a>
+               </div><!--//people-->
+               <div class="job">
+                  <a href="#">
+                     <img src="img/main/recruit_icon2.png" alt="부서 및 직무소개">
+                     <em>부서 및 직무소개</em>
+                  </a>
+               </div><!--//job-->
+               <div class="welfare">
+                  <a href="#">
+                     <img src="img/main/recruit_icon3.png" alt="복리후생">
+                     <em>복리후생</em>
+                  </a>
+               </div><!--//welfare-->
+               <a href="#" target="_blank" class="recruit_notice"><span>채용공고 바로가기</span></a>
+            </div><!--//container-->
+         </section><!--//recruit_wrap-->
+         <section class="pr_room_wrap">
+            <div class="container">
+               <h2>PR ROOM</h2>
+               <p>도루코의 소식과 공지사항을 전달해 드립니다.</p>
+               <ul>
+                  <li>
+                     <a href="#">
+                        <img src="img/main/1VQVVG98CJ_2.jpg" alt="">
+                        <p>대한민국 면도기 도루코,<br>미세먼지 잡는 엠케어 클렌징 폼 출시</p>
+                        <span>2019.11.25</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/main/Dorco_B_1-1-1024x512.jpg" alt="">
+                        <p>도루코'1터치 7절삭' 가능한 <br>PACE 3D Motion 남자 면도기 출시</p>
+                        <span>2019.11.25</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/main/CommCode_image_201411271408381_.jfif" alt="">
+                        <p>도루코·도루코리빙 임직원,<br>"사랑의 연탄 나르기" 봉사활동</p>
+                        <span>2015.09.11</span>
+                     </a>
+                  </li>
+               </ul>
+               <div class="prroom_btns">
+                  <button class="prroom_prev"><span class="blind">이전보기</span></button>
+                  <button class="prroom_next"><span class="blind">다음보기</span></button>
+               </div><!--//product_controls-->
+            </div><!--//container-->
+         </section><!--//pr_room_wrap-->
+      </main><!--//main-->
+      <footer id="footer">
+         <div class="container">
+            <img src="img/main/ico_logo_f.png" alt="DROCO">
+            <div class="footer_menu">
+               <address>
+                  서울특별시 서초구 효령로70길 36-9(서초동) <br>
+                  Tel 02-585-3611 
+                  <span class="address_fax">Fax 02-587-9723</span> <br>
+                  소비자 상담실 080-022-3211 <br>
+                  E-mail webmaster@dorco.co.kr <br>
+               </address>
+               <p class="copyright">COPYRIGHT &copy; 2012 DORCO ALL RESERVED</p>
+            </div><!--//footer_menu-->
+            <ul class="sns_list">
+               <li><a href="#" target="_blank"><img src="img/main/sns_twiter.png" alt="트위터로 이동"></a></li>
+               <li><a href="#" target="_blank"><img src="img/main/sns_facebook.png" alt="페이스북으로 이동"></a></li>
+               <li><a href="#" target="_blank"><img src="img/main/sns_insta.png" alt="인스타그램으로 이동"></a></li>
+            </ul>
+         </div><!--//container-->
+      </footer><!--//footer-->
+   </div><!--//wrap-->
+</body>
+</html>

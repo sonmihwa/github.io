@@ -1,0 +1,191 @@
+@charset "utf-8";
+
+/*PC*/
+@media all and (min-width: 1150px) {
+   .container {width: 1150px;margin: 0 auto;}
+   
+   #popup a {width: 50%;float: left;}
+   #popup a:nth-child(1) img {float: right;}
+
+   .mo_gnb_open, .mo_mypage, .mo_logo, .m_login, .mo_gnb_close, .mo_visual_wrap, .mo{display: none;}
+
+   #header {left: 50%;top: 30px;/*header값을 왼쪽 위 0,0 부터 시작해서 왼쪽으로 50% 이동하고 top값은 30px 만큼만 떨어뜨림*/      
+   transform: translate(-50%,0);
+	/*왼쪽으로 50%이동한 값에서 자기 자신 크기의 반만큼 다시 왼쪽으로 이동해야 가운데 정렬이 되기 때문에  -50% 값을 주고
+	상하는 이동하지 않음*/
+   }
+   #header h1 {margin:15px 50px 0 25px;float: left;}
+   #header h1 a {width: 88px;height: 30px;	background: url(../img/logo_new.png);}
+   #header #gnb {float: left;}
+   #header #gnb>li {float: left;font-size: 20px;}
+   #header #gnb>li>a {margin-right: 60px;line-height: 60px;}
+   #header #gnb>li:hover>a {color: #0a56a8;}
+   
+   .dep_2 {display: none;position: absolute;left: 0;right: 0;top: 60px;padding: 20px 0 10px 160px; background: url(../img/bg_gnb_new.png);}/*포지션 앱솔루트를 줬을 때 width값이 사라지는 문제를 해결하기 위해 width를 100%로 주고 패딩 값을 주면 패딩 값의 100%가 적용되기 때문에 가득 채우기 위해서는 left:0 right:0을 사용 다만, 항상 이 방법이 옳은 것은 아님*/
+   /*패딩 163px = h1의 높이값 88px 양쪽 마진 값을 더한 값*/
+   .dep_2>li { margin-right: 80px;float: left;}
+   /* #header #gnb>li:hover .dep_2 {display: block;} - CSS로 구현하지 말고 jQuery로 구현*/
+   
+   .dep_2>li:last-child {margin-right: 0;}
+   .dep_2>li>a {display: block; margin-bottom: 20px; font-size: 18px;font-weight: bold;}
+   .dep_3>li {margin-bottom: 10px;font-size: 14px;}
+   .dep_3 a:hover{text-decoration: underline;}
+
+   #header .evt_link {display: block;}
+   #header .util {display: block;}
+
+   .product_list_wrap li a {width: 370px;height: 380px;} 
+   .quick_menu_wrap li {width: 20%;}
+
+   /*footer*/
+
+
+}
+/*a가 이미지이기 때문에 width와 heigh 값이 필요했으며 container가 1150px이기 때문에 a 한개의 width값은 마진값을 제하고 3으로 나눈 370px*/
+
+
+/*Teblet - L*/
+@media screen and (max-width: 1149px) {
+   body:before {content:"1149";display: block;position: fixed;left: 0;top: 0;font-size: 20px;background: rgba(255,0,0,0.5);padding: 20px;z-index: 9999;color: #FFF;}
+
+   #header {left: 0;right: 0;top: 0;padding: 15px 0;background: #FFF;}
+   #header h1 {width: 98px;margin: auto;}
+   #header h1 a {height: 30px;background: url(../img/mlogo.png);background-size: auto 100%;}
+   
+   #header .mo_gnb_bg {display: none;position: fixed;left: 0;right: 0;top: 0;height: 100%;background: rgba(0,0,0,0.5);}
+   
+   #header .mo_gnb_bg nav {position: absolute;left: -300px;top: 0;width: 300px;height: 100%;background: #FFF;overflow: auto;}
+
+   .mo_gnb_open {position: absolute;left: 3%;top: 50%;transform: translateY(-50%);width: 22px;
+   }
+   .mo_gnb_open span {display: block;height: 3px;margin-bottom: 5px;background: #444;}
+   .mo_gnb_open span:last-child {margin-bottom: 0;}
+   .mo_mypage {display: block;position: absolute;right: 3%;top: 50%;transform: translateY(-50%);height: 30px;}
+   .mo_mypage img {height: 100%;}
+
+   #header .mo_gnb_bg nav .mo_logo {display: block;width: 150px;margin: 25px 0 35px 30px;}
+   #header .mo_gnb_bg nav .mo_logo img {width: 100%;}
+   #header .mo_gnb_bg nav .mo_gnb_close {position: absolute;right: 25px;top: 25px;width: 30px;height: 30px;}
+
+   #header .mo_gnb_bg nav .mo_gnb_close span {display: block;height: 2px;background: #666;}
+   #header .mo_gnb_bg nav .mo_gnb_close span:nth-child(1) {transform: translateY(1px) rotate(45deg)}
+   #header .mo_gnb_bg nav .mo_gnb_close span:nth-child(2) {transform: translateY(-1px) rotate(-45deg)}
+
+   #header .mo_gnb_bg nav .m_login {display: block;padding: 20px 0 20px 25px;font-size: 18px;background-color: #666;color: #FFF;line-height: 25px;}
+   #header .mo_gnb_bg nav .m_login:before {content:"";display: block;width: 25px;height: 25px;margin-right: 10px;float: left;background-image: url(../img/bg_menuG.png);background-repeat: no-repeat;background-position: 0 -342px;background-size: 25px;}
+
+   #header .mo_gnb_bg nav a {display: block;}
+   #header .mo_gnb_bg nav #gnb>li>a {
+      display: block;padding: 20px 25px;overflow: hidden;font-size: 18px;line-height: 25px;
+      border-bottom: 1px solid #AAA;
+    }
+   #header .mo_gnb_bg nav #gnb>li>a:before {
+      content:"";display: block;float: left;background-image: url(../img/bg_menuG.png);
+      background-size: 25px;width: 25px;height: 25px;margin-right: 10px;}
+
+   /**/  
+   #header .mo_gnb_bg nav #gnb>li>a:after {content:"";display: block;width: 7px;height: 11px;float: right;background: url(../img/ico_arrow_right_m.png);transform: translateY(9px) rotate(90deg)}
+   #header .mo_gnb_bg nav #gnb>li>a.icon_on:after {transform: translateY(4px) rotate(-90deg)}
+   /**/
+
+   #header .mo_gnb_bg nav #gnb>li:nth-child(1)>a {background-position: 0 0;}
+   #header .mo_gnb_bg nav #gnb>li:nth-child(2)>a {background-position: 0 0;}
+   #header .mo_gnb_bg nav #gnb>li:nth-child(3)>a {background-position: 0 0;}   
+
+   #header .mo_gnb_bg nav #gnb .dep_2 {display: none;padding: 0 25px;background: #f6f6f6;}
+   #header .mo_gnb_bg nav #gnb .dep_2>li>a {padding: 20px 0;border-bottom: 1px solid #AAA;}
+   #header .mo_gnb_bg nav #gnb .dep_2>li:last-child>a {border-bottom: none;}
+   #header .mo_gnb_bg nav #gnb .dep_2>li .dep_3 {margin-bottom: 30px;border-bottom: none;}
+
+   /**/
+   #header .mo_gnb_bg nav #gnb .dep_2>li.has3>a:after {content: "";display: block;width: 10px;height: 10px;margin-top: 3px;float: right;background: url(../img/ico_zoom_family.png) 0 0;}
+   #header .mo_gnb_bg nav #gnb .dep_2>li.has3>a.icon_on:after {background-position: -34px 0;}
+   /**/
+
+   #header .mo_gnb_bg nav #gnb .dep_3 {display: none;padding: 10px 0;border-bottom: 1px solid #dbdbdb;background: #FFF;}
+   #header .mo_gnb_bg nav #gnb .dep_3>li>a {padding: 10px 20px;font-size: 14px;}
+   #header .mo_gnb_bg nav #gnb .dep_3>li>a::before {content: "";display: block;width: 4px;height: 4px;margin-right: 8px;margin-top: 5px;float: left;background-color: #00a5e5;}
+
+   .visual_wrap, .product_info_wrap, .quick_menu_wrap li {display: none;}
+   .mo_visual_wrap {position: relative;padding-top: 61px;overflow: hidden;}
+   .mo_visual_wrap ul {overflow: hidden;}
+   .mo_visual_wrap li {float: left;}
+   .mo_visual_wrap li:nth-child(1) {display: block;}
+
+   .mo_visual_wrap img{width: 100%;}
+   .mo_visual_wrap .slide_btn button {position: absolute;top: 50%;transform: translateY(-50%); width: 30px;border: 1px solid #DDD;}
+   .mo_visual_wrap .slide_btn .prev {left: 0;}
+   .mo_visual_wrap .slide_btn .next {right: 0;}
+
+   .product_list_wrap li {width: calc(33.33333333% - 14px);}
+   .product_list_wrap li a {height: 0;padding-top: 102%;}
+   
+   .quick_menu_wrap li {width: 25%;}
+   .quick_menu_wrap li.all, .quick_menu_wrap li.ta, .quick_menu_wrap li.mo {display: block;}
+
+   /*footer*/
+   #footer .corp_info_wrap {float: none;}
+
+   #footer .footer_util_wrap {float: none;}
+
+   #footer .footer_util_wrap .footer_etc {float: left;}
+   #footer .footer_util_wrap .footer_etc .sns_list {display: none;}
+
+   #footer .external_link {float: left;}
+}
+/*
+- 줄어든 태블릿의 가로 길이에 맞춰 li의 width값을 변경 
+- 14 px = (마진 20 px *2 -세 개 중 두 개에 마진이 들어감으로) / 3
+- 가변값으로 줘야 하기 때문에 heigh의 값을 0으로 주고 원래 width값 370px일때 height 380의 값을 퍼센트로 계산하면 102%가 됨
+*/
+
+
+
+/*Teblet - S*/
+@media screen and (max-width: 800px){
+   body:before {content:"800";display: block;position: fixed;left: 0;top: 0;font-size: 20px;background: rgba(255,0,0,0.5);padding: 20px;z-index: 9999;color: #FFF;}
+
+   #popup a img {width: 90%;}
+
+   .product_list_wrap li {width: calc(50% - 10px);}
+   .product_list_wrap li:nth-child(2) {margin-right: 0;}
+   .product_list_wrap li:nth-child(3) {display: none;} 
+   .product_list_wrap li a {height: 0;padding-top: 102%;}
+   
+
+   .board {width: 100%;float: none;}
+   .notice {padding-right: 30px;border-right: none;}
+   .event {padding-left: 0;margin-top: 70px;}
+   
+}
+
+/*
+- 두개만 보이면 되기 때문에 50% 
+- 10px = 마진20px / 2 (두 개 중 한개만 들어가면 됨으로) 
+**마진 값 빼는 공식: (총 개수의 마진 라이트or레프트 값 - 1) / 총 개수의 값 
+ex) 3개에 마진 라이트 값이 20px인 경우 : (60px - 20px) / 3 
+- 둘째 li의 마진값은 빼줘야 하기 때문에 0으로 적용
+*/
+
+
+
+/*Mobile*/
+@media screen and (max-width: 500px) {
+   body:before {content:"500";display: none;position: fixed;left: 100px;top: 0;font-size: 20px;background: rgba(255,0,0,0.5);padding: 20px;z-index: 9999;color: #FFF;}
+
+   #popup {display: none;}
+
+   .quick_menu_wrap li {width: 50%;}
+   .quick_menu_wrap li.ta {display: none;}
+   .quick_menu_wrap li.all, .quick_menu_wrap li.mo {display: block;}
+
+   .product_list_wrap li {width: 100%;margin-right: 0;margin-bottom: 20px;float: none;}
+   .product_list_wrap li:nth-child(3) {display: block;}
+
+   /*footer*/
+   #footer .corp_info_wrap .footer_menu {text-align: center;}
+   #footer .corp_info_wrap .footer_menu li {display: inline-block;margin: 20px 12px;float: none;}
+   #footer .corp_info_wrap address, #footer .corp_info_wrap .copyright {text-align: center;}
+   #footer .corp_info_wrap address span {display: none;}
+   .footer_util_wrap {display: none;}
+}

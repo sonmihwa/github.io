@@ -1,0 +1,121 @@
+@charset "urf-8";
+
+/*PC*/
+@media all and (min-width: 1201px) {
+   .container {width: 1380px;}
+
+   header {padding: 0 70px;}
+   header h1 {margin: 12px 0;}
+
+   header nav .mo_gnb_btn {display: none;}
+
+   header #gnb {display: block;float: right;text-align: center;}
+   header #gnb>li {width: 170px;float: left;}
+   header #gnb>li>a {display: block;line-height: 70px;}
+
+   #main_visual .vis_txt_content  {width: 40%;margin-right: 10%;margin-top: 80px;}
+   #main_visual img[src*=Vis] {width: 50%;}
+
+   #service {padding: 100px 12%;}
+
+   /*solution*/
+   #solution {background-position: 3% 100px, right 3% bottom 50px;}
+   #solution .slider {width: 1180px;margin: auto;}
+   #solution .slider ul {width: calc(400px * 8);}
+   #solution .slider li {width: 380px;}
+
+   #solution .slide_btn {position: relative;display: block;}
+   #solution .slide_btn button{position: absolute;bottom: 159px;}
+   /*li 높이값 360의 절반 - 자신의 높이값의 절반 = 159 px*/
+   #solution .slide_btn .prev_btn {left: calc(50% - 650px);}
+   #solution .slide_btn .next_btn {right: calc(50% - 650px);}
+
+   #solution .scrollbar_track {width: 1130px;}
+
+   #overview ul {width: 1200px;margin: auto;}
+   #overview li:last-child {margin-right: 0;}
+}
+
+
+/*Teblet - L*/
+@media all and (max-width: 1200px) {
+   header {padding: 0 30px;border: none;}
+   header.open {height: 100%;overflow: auto;background: rgba(241,243,252,0.98);}
+   /*현재 상태는 닫혀 있는 것이 기본 상태인데 .open이라는 클래스가 생길 때 높이값이 100%가 되고 필요시 스크롤이 생기라는 의미*/
+   header h1 {margin: 12px 0;}
+
+   header nav .mo_gnb_btn {display: block;position: absolute;right: 30px;top: 50%;transform: translateY(-50%);text-align: left;cursor: pointer;}
+   header nav .mo_gnb_btn i {display: inline-block;width: 20px;height: 18px;vertical-align: bottom;}
+   header nav .mo_gnb_btn span {display: block;height: 2px;margin-bottom: 6px;background: #0a4da7;;}/*header가 이미 fixed이기 때문에 기준이 됨*/
+   
+   header.open nav .mo_gnb_btn span.btn1 {transform: translateY(8px) rotate(-45deg);}
+   header.open nav .mo_gnb_btn span.btn2 {display: none;}
+   header.open nav .mo_gnb_btn span.btn3 {transform: rotate(45deg);}
+
+   header.open nav .mo_gnb_btn {right: 0;top: 0;transform:translateY(0);padding: 20px 25px;background: #0a4da7;}
+   header.open nav .mo_gnb_btn:after {content: "CLOSE";color: #FFF;font-size: 16px;}
+   header.open nav .mo_gnb_btn span {background: #FFF;}
+
+   header #gnb {display: none;clear: both;}
+   header.open #gnb {display: block;margin-top: 80px;}
+   header #gnb>li {border-top: 1px solid #ddd;}
+   header #gnb>li>a {display: block;padding: 10px 0;font-size: 28px;font-weight: bold;}
+   header #gnb ul {margin: 10px;}
+   header #gnb ul a {display: block;margin-bottom: 1px;background: #FFF;line-height: 2.3em;text-indent: 20px;}
+
+   footer .contact_info .contact_left {width: auto;margin-bottom: 40px;float: none;}
+   footer .contact_info .contact_left br {display: none;}
+   footer .contact_info .contact_detail {width: 33.333333333%;}
+
+   #main_visual .vis_txt_content {width: auto;margin-bottom: 30px;float: none;}
+   #main_visual .vis_txt_content li {width: calc(33.333333 - 30px);}
+   #main_visual img {width: 100%;float: none;}
+
+
+   #solution .slider {width: auto;}
+   #solution .slider li {width: calc((100vw - 140px) / 3);}
+
+   #overview li {width: calc(25% - 15px);margin-right: 20px;}
+   #overview li:last-child {margin-right: 0;}
+   #overview li em {font-size: 24px;}
+   #overview li em b {font-size: 40px;}
+}
+
+/*Teblet - M*/
+@media all and (max-width: 1000px) {
+   footer .contact_info {padding: 50px 0;} 
+
+   #overview li {width: calc(50% - 20px);margin-right: 40px;}
+   #overview li:nth-child(2n) {margin-right: 0;}
+   #solution .scrollbar_face {width: calc(100% / 8 * 2);}
+}
+
+
+/*Teblet - S*/
+@media all and (max-width: 800px) {
+   footer .contact_info .contact_detail {width: auto;margin-bottom: 40px;float: none;}
+
+   #main_visual .vis_txt_content li {width: auto;float: none;}
+   
+   #solution .slider li {width: calc((100vw - 100px) / 2);}
+
+}
+
+
+/*Mobile*/
+@media all and (max-width: 500px) {
+   article strong {font-size: 25px;}
+   header h1 a {width: 160px;height: 0;padding-top: 22.00956937799%;}
+
+   footer .contact_info .contact_left p.txt {font-size: 24px;}
+   footer .copyright {padding-top: 100px;background-position: center 30px;text-align: center;}
+
+   #service .svc_content .txt_content {width: auto;padding-right: 0;float: none;}
+   #service .svc_content img {width: 100%;float: none;}
+
+   #solution .slider li {width: calc(100vw - 60px);}
+
+   #solution .scrollbar_face {width: calc(100% / 8);}
+
+   #overview li {width: auto;margin-right: 0;margin-bottom: 20px;float: none;}
+}

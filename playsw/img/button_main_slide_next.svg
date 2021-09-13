@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__그룹_291" transform="rotate(-90 225 525)">
+        <g id="prefix__패스_309">
+            <path id="prefix__패스_251926" d="M709 326.9a1.5 1.5 0 0 1 2.56-1.061l8.84 8.839 8.839-8.839a1.5 1.5 0 0 1 2.121 2.121l-9.9 9.9a1.5 1.5 0 0 1-2.121 0l-9.9-9.9a1.492 1.492 0 0 1-.439-1.06z" class="prefix__cls-1" data-name="패스 251926"/>
+        </g>
+        <g id="prefix__사각형_209" transform="translate(690 370)">
+            <g id="prefix__그룹_3909" data-name="그룹 3909">
+                <path id="prefix__패스_251927" d="M30-70a30 30 0 0 1 30 30 30 30 0 0 1-30 30A30 30 0 0 1 0-40a30 30 0 0 1 30-30z" data-name="패스 251927" style="fill:none"/>
+            </g>
+            <g id="prefix__그룹_3910" data-name="그룹 3910">
+                <path id="prefix__패스_251928" d="M0-40a30.034 30.034 0 0 1 30-30 30.034 30.034 0 0 1 30 30 30.034 30.034 0 0 1-30 30A30.034 30.034 0 0 1 0-40zm58 0a28.032 28.032 0 0 0-28-28A28.031 28.031 0 0 0 2-40a28.031 28.031 0 0 0 28 28 28.032 28.032 0 0 0 28-28z" class="prefix__cls-1" data-name="패스 251928"/>
+            </g>
+        </g>
+    </g>
+</svg>

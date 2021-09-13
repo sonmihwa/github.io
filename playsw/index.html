@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>소프트웨어야 놀자</title>
+   <!--style sheet-->
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/main.css">
+
+   <!--Java Script-->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="js/main.js"></script>
+   
+</head>
+<body>
+<div id="skip_nav">
+   <a href="#main">본문 바로보기</a><!--아이디가 main인 곳으로 이동하라는 의미 / 이름이 다르면 찾아갈 수 없음-->
+</div><!--#skip_nav end-->
+<div id="wrap">
+   <header id="header">
+      <div class="header_inner clrfix">
+         <h1><a href="#"><span class="blind">소프트웨어야 놀자</span></a></h1>
+         <nav>
+            <ul id="gnb">
+               <li><a href="#">알아보기</a></li>
+               <li><a href="#">인공지능&데이터</a></li>
+               <li><a href="#">소프트웨어</a></li>
+               <li><a href="#">프로그램</a></li>
+               <li><a href="#">아카이브</a></li>
+            </ul>
+            <button class="btn_login">로그인</button><!--이 부분은 다른 곳으로 이동하는 링크가 아님 / modal을 이용해서 로그인 창이 뜨게 할 수 있음-->
+            <button class="mo_close"><img src="img/button_gnb_close.svg" alt="모바일 메뉴 닫기"></button>
+         </nav> <!--html5부터 추가된 태그 / navigation의 의미 / gnb에는 nav 태그 사용-->
+         <button class="mo_open"><img src="img/button_mo_gnb.svg" alt="모바일 메뉴 열기"></button>
+
+      </div><!--.header_inner end-->
+   </header><!--#header end-->
+   <section class="main_slider_wrap">
+      <h2 class="blind">소프트웨어야 놀자 소개</h2>
+      <div class="main_slider">
+         <div class="slide_box slide1">
+            <div class="slide_container">
+               <a href="#">
+                  <strong><img src="img/bg_main_spot_title.svg" alt="PLAY WI AI, PLAY WI DATA"></strong>
+               <!--url이 다르지 않다면 img 태그로 사용, 다르다면 css태그에서 사용하는 것이 좋음-->
+                  <p>인공지능과 데이터의 시대.<br class="mobile_br"> 아이들에게 필요한 <br class="pc_br"> 미래 교육에 <br class="mobile_br"> 네이버의 경험과 기술을 담습니다.</p>
+               </a>
+            </div><!--.container end--><!--가운데 정렬을 위한 박스-->
+         </div><!--.slide_box slide1 end-->
+         <div class="slide_box slide2">
+            <div class="slide_container">
+               <a href="#">
+                  <strong>Hello <br class="pc_br"> AI World</strong>
+                  <p>인공지능과 데이터의 기본 개념을 <br> 쉽고 재미있는 영상으로 만나보세요.</p>
+               </a>
+            </div><!--//slide_container-->
+         </div><!--.slide_box slide2 end-->
+      </div><!--.main_slider end-->
+      <div class="slider_controls">
+         <div class="slide_container">
+            <div class="paging">
+               <button class="page_on"><span class="blind">1번째 슬라이드</span></button>
+               <button><span class="blind">2번째 슬라이드</span></button>
+            </div><!--.paging end-->
+            <div class="dir_btns">
+               <button class="btns_prev"><span class="blind">이전 슬라이드 보기</span></button>
+               <button class="btns_next"><span class="blind">다음 슬라이드 보기</span></button>
+            </div><!--.dir_btns end-->
+         </div><!--//slide_container-->
+      </div><!--.slider_controls-->
+   </section><!--.main_slider_wrap end-->
+   <!--main에 긴 이미지를 background로 만들기 위해 main slider를 따로 분리한 것-->
+   <main id="main">
+      <h2 class="blind">소프트웨어야 놀자 설명</h2>
+      <section class="why_ai_data"> <!--section은 영역을 구분할 때 사용하기 때문에 내부에는 반드시 제목태그가 필요함 (h2~h6)-->
+         <div class="inner">
+            <h3>왜 AI와 DATA를 <br> 교육하는가</h3>
+            <p>인공지능과 데이터의 시대. <br> 아이들에게 필요한 미래 교육에 <br> 네이버의 경험과 기술을 담습니다.</p>
+            <a href="#" class="btn_link">자세히 보기</a>
+         </div><!--//inner-->
+      </section><!--//why_ai_data-->
+      <section class="hello_ai">
+         <div class="inner">
+            <h3>Hello <br class="mobile_br"> AI World</h3>
+            <p>나의 삶과 세상에 <br class="pc_br"> 많은 변화를 <br class="mobile_br"> 만들어가고 있는 인공지능 기술. <br> 인공지능(AI)은 정확히 무엇일까요?</p>
+            <a href="#" class="btn_link">자세히 보기</a>
+            <a href="#">
+               <video src="media/intro_mv.mp4" autoplay muted></video>
+            </a>
+         </div><!--//inner-->
+      </section><!--//hello_ai-->
+      <section class="sw_edu clrfix">
+         <div class="inner">
+            <div class="title_box">
+               <h3>소프트웨어 <br> 교육의 시작</h3>
+               <p>누구나 쉽고 편하게 소프트웨어를 <br> 배우고 가르칠 수 있도록 <br> 다양한 교육 콘텐츠를 제공합니다.</p>
+               <a href="#" class="btn_link">자세히 보기</a>
+            </div><!--//title_box-->
+            <div class="list_box">
+               <ul class="clrfix">
+                  <li>
+                     <a href="#">
+                        <img src="img/edu_img_1.jpg" alt="">
+                        <strong>문제를 잘게 쪼개기</strong>
+                        <p>무스 아저씨가 어떻게 문제를 해결해서 열매를 먹을 수 있는지 살펴볼까요?</p>
+                        <span class="video_time">01:30</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/edu_img_2.jpg" alt="">
+                        <strong>복잡한 프로그램 만들기</strong>
+                        <p>캥거루 아가씨가 물을 마시기 위해 어떤 프로그램을 만들었는지 볼까요?</p>
+                        <span class="video_time">01:30</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/edu_img_3.jpg" alt="">
+                        <strong>알고리즘이란?</strong>
+                        <p>어떻게 하면 로봇이 나의 이를 닦아줄 수 있을까요?</p>
+                        <span class="video_time">01:10</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/edu_img_4.jpg" alt="">
+                        <strong>애니메이션 만들기</strong>
+                        <p>애니메이션은 정지된 그림들로 만들어졌다는 것을 알고 있나요?</p>
+                        <span class="video_time">01:01</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/edu_img_5.jpg" alt="">
+                        <strong>인터넷이란?</strong>
+                        <p>이 웹페이지를 어떻고 보고 있는거지? 인터넷을 통해!</p>
+                        <span class="video_time">01:01</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/edu_img_6.jpg" alt="">
+                        <strong>컴퓨터 게임 만들기</strong>
+                        <p>게임을 하는 것보다 만드는게 더 재미있어요.</p>
+                        <span class="video_time">01:01</span>
+                     </a>
+                  </li>
+               </ul>
+               <div class="btn_list_box">
+                  <button class="btn_left">
+                     <img src="img/button_arrow_left.svg" alt="왼쪽으로">
+                  </button>
+                  <button class="btn_right">
+                     <img src="img/button_arrow_right.svg" alt="오른쪽으로">
+                  </button>
+               </div><!--//btn_list_box-->
+            </div><!--//list_box-->
+         </div><!--//inner-->
+      </section><!--//sw_edu-->
+      <section class="news_stroy">
+         <div class="inner">
+            <h3>뉴스&스토리</h3>
+            <p>네이버와 커넥트재단은 아이들이 자유롭게 <br class="mobile_br"> 더 큰 꿈을 꿀 수 있도록 <br>다양한 소프트웨어 교육을 진행합니다.</p>
+            <a href="#" class="btn_link">자세히 보기</a>
+            <div class="list_box">
+               <ul class="clrfix">
+                  <li>
+                     <a href="#">
+                        <img src="img/news_img_1.png" alt="">
+                        <span class="category">뉴스</span>
+                        <p>네이버, 세종시 학생과 교사 대상 AI&middot;SW교육 지원한다</p>
+                        <span class="date">2021.03.31</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/news_img_2.png" alt="">
+                        <span class="category">뉴스</span>
+                        <p>네이버 커넥트재단, ‘엔트리’ 리뉴얼 오픈</p>
+                        <span class="date">2021.03.12</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/news_img_3.png" alt="">
+                        <span class="category">뉴스</span>
+                        <p>네이버 커넥트재단, AI·데이터 학습 콘텐츠 무료 공개</p>
+                        <span class="date">2020.11.06</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/news_img_4.png" alt="">
+                        <span class="category">뉴스</span>
+                        <p>인공지능의 눈으로 세상을 알아간다는 것</p>
+                        <span class="date">2020.10.19</span>
+                     </a>
+                  </li>
+                  <li>
+                     <a href="#">
+                        <img src="img/news_img_5.png" alt="">
+                        <span class="category">뉴스</span>
+                        <p>아이스크림연수원, 네이버 커넥트 재단과 'AI교육' 무료 연수 오픈</p>
+                        <span class="date">2020.11.03</span>
+                     </a>
+                  </li>
+               </ul>
+            </div><!--//list_box-->
+            <div class="btn_list_box">
+               <button class="btn_left">
+                  <img src="img/button_arrow_left.svg" alt="왼쪽으로">
+               </button>
+               <button class="btn_right">
+                  <img src="img/button_arrow_right.svg" alt="오른쪽으로">
+               </button>
+            </div><!--//btn_list_box-->
+         </div><!--//inner-->
+      </section><!--//news_story end-->
+      <a href="#" target="_blank" class="goEntry">엔트리 바로가기 <img src="img/ico_arrow_right.svg" alt="앤트리로 이동"></a>
+      <!--아무 의미가 없을 경우 img 태그를 사용함 / 내용이 없는 경우 IR 기법을 사용하지 않아도 됨-->
+   </main><!--#main end-->
+   <footer id="footer">
+      <div class="footer_inner">
+         <div class="corp_info clrfix">
+            <img src="img/logo_footer.svg" alt="소프트웨어야 놀자" class="footer_logo">
+            <div class="info_1">
+               <span class="footer_title">Information</span>
+               <address>
+                  사업자 등록번호 : 129-82-12249 <br>
+                  주소 : 경기도 성남시 분당구 불정로 6(장자동, 그린팩토리) <br>
+                  대표자 :조규찬 <br>
+                  법인명 :(재)네이버커넥트 <br>
+                  연락처 :1522-9182 <br>
+               </address>
+            </div><!--//info_1-->
+            <div class="info_2">
+               <span class="footer_title">Contact</span>
+               <p><a href="mailto:play_sw@connect.or.kr">play_sw@connect.or.kr</a></p>
+            </div><!--//info_2-->
+         </div><!--//corp_info-->
+         <div class="footer_content clrfix">
+            <ul class="sns_list">
+               <li><a href="#" target="_black"><img src="img/sns_naverpost.svg" alt="네이버포스트로 이동"></a></li>
+               <li><a href="#" target="_black"><img src="img/sns_youtube.svg" alt="유튜브로 이동"></a></li>
+               <li><a href="#" target="_black"><img src="img/sns_facebook.svg" alt="페이스북으로 이동"></a></li>
+               <li><a href="#" target="_black"><img src="img/sns_navertv.svg" alt="네이버티비로 이동"></a></li>
+            </ul>
+            <ul class="footer_menu">
+               <li><a href="#">이용약관</a></li>
+               <li><a href="#">개인정보 처리방침</a></li>
+               <li><a href="#">자주 묻는 질문</a></li>
+            </ul>
+            <a href="#" class="copyright">&copy;NAVER Connect Foundation</a>
+         </div><!--//footer_content-->
+      </div><!--.footer_inner end-->
+   </footer><!--#footer end-->
+</div><!--#wrap end-->
+</body>
+</html>
+
+<!--
+*div / section
+div 태그 
+- 의미 없이 단순한 그룹을 만들 때 
+
+section 태그
+- 완전히 다른 내용을 구분할 때 
+-->

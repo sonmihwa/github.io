@@ -1,0 +1,221 @@
+/*PC*/
+@media all and (min-width : 1200px) {
+   h2 {margin-top: 165px;font-size: 36px;}
+
+   /*header*/
+   #header {position: fixed;left: 0;right: 0;top: 0;height: 60px;background: #FFF;z-index: 900;color: #000;}
+   #header:hover:after {content: "";display: block;position: absolute;left: 0;right: 0;top: 60px;height: 200px;background: #FFF;border-top: 1px solid #DDD;}
+
+   #header nav #gnb {text-align: center;}
+   #header nav #gnb>li {display: inline-block;position: relative;}
+   #header nav #gnb>li>a {position: relative;padding: 0 55px;line-height: 60px;z-index: 999;}
+   header #gnb>li>a:hover:after {content: "";display: block; height: 2px;margin-top: -1px; background: #87ba41;}
+   #header #gnb .dept2 {display: none;position: absolute;left: 0;right:0;top: 60px;padding: 15px 0;z-index: 999;}
+   #header:hover #gnb .dept2 {display: block;}
+   #header:hover #gnb .dept2>li {padding: 10px 0;font-size: 16px;}
+   header:hover #gnb .dept2>li:hover {color: #87ba41;text-decoration: underline;}
+
+   #header nav .recruit_link {position: absolute;right: 5%;top: 50%;transform: translateY(-50%);font-size: 14px;}
+   #header nav .lang {position: absolute;right: 10%;top: 50%;transform: translateY(-50%);}
+   #header nav .lang li {display: none;position: relative;}
+   #header nav .lang li:nth-child(1) {display: block;}
+   #header nav .lang:after {content: "";display: block;position: absolute;right: -20px;top: 50%;transform: translateY(-50%); width: 10px;height: 6px;background: url(../img/main/lang_select.png);cursor: pointer;}
+
+   /*footer*/
+   #footer {position: relative;height: 300px;}
+   #footer .container {padding: 80px 10%;}
+   #footer .footer_logo {float: left;}
+
+   #footer .footer_menu {position: absolute;left: 50%;top: 80px;transform: translateX(-50%);}
+   #footer .footer_menu address {line-height: 36px;}
+   #footer .footer_menu .copyright {position: absolute;left: 50%;top: 120px;transform: translateX(-50%);}
+
+   #footer .sns_list {float: right;}
+
+   /*Main - visual_wrap*/
+   #main .visual_wrap .main_slider .slider_box .slide {padding-top: 5%;}
+   #main .visual_wrap .main_slider .slider_box .slick-dots {bottom: 60px;}
+
+   #main .visual_wrap .main_slider .visual_txt p {font-size: 42px;}
+
+   /*Main - icon_wrap*/
+   .quick_menu_wrap {height: 200px;}
+   .quick_menu_wrap ul {padding: 50px 0;}
+   .quick_menu_wrap li {width: 20%;}
+
+   /*Main - product_wrap*/
+   .product_wrap .tabs {margin-top: 80px;margin-bottom: 70px;}
+
+   .product_wrap .product_line .list_box .product {width: calc(410px * 7);height: 620px;}
+   .product_wrap .product_line .list_box .product li {width: 410px;margin-right: 20px;}
+   .product_wrap .product_line .list_box .product li:last-child {margin-right: 0;}
+   .product_wrap .product_line .list_box .product li a strong {font-size: 24px;}
+   
+   .product_wrap .product_controls .product_prev {left: 20px;}
+   .product_wrap .product_controls .product_next {right: 20px;}   
+
+   /*Main - Clean Dorco*/
+   .clean_dorco_wrap h2 {font-size: 50px;}
+
+   .clean_dorco_wrap ul {width: 1200px;}
+   .clean_dorco_wrap ul li {width: calc(25% - 30px);margin-right: 40px;line-height: 100px;}
+   .clean_dorco_wrap li:last-child {margin-right: 0;}
+
+
+   /*Main - RECRUIT*/
+   .recruit_wrap .container {width: 1200px;}
+   .recruit_wrap .recruit_box {position: relative;width: calc(100% / 3 - 30px);margin-bottom: 100px;margin-right: 20px;float: left;}
+   .recruit_wrap .recruit_box:last-child {margin-right: 0;}
+   
+   .recruit_wrap .recruit_box a {height: 386px;}
+   .recruit_wrap img {position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);}
+   .recruit_wrap em {position: absolute;left: 50%;transform: translateX(-50%);bottom: 50px;font-size: 28px;}
+
+   .recruit_wrap .recruit_notice {width: 200px;height: 50px;margin: 0 auto;clear: both;border-radius: 10px;}
+   .recruit_wrap .recruit_notice span {line-height: 50px;}
+
+   /*Main - PRROOM*/
+   .pr_room_wrap p.news_explain {margin-top: 50px;margin-bottom: 80px;}
+   
+   .pr_room_wrap .pr_room_box .news {margin-bottom: 140px;}
+   .pr_room_wrap .pr_room_box .news p {margin-top: 70px;font-size: 18px;}
+   .pr_room_wrap .pr_room_box .news span {margin-bottom: 60px;font-size: 14px;}
+}
+
+/*Tablet*/
+@media all and (max-width : 1199px) {
+   h2 {margin-top: 100px;font-size: 54px;}
+   [class*='mo'] {display: block;}
+   .container {padding: 0 3%;}
+
+   /*header*/
+   #header .mo_bg {position: fixed;left: 0;right: 0;top: 0;bottom: 0;height: 100%;background: rgba(0,0,0,0.7);z-index: 999;display: none;}
+   #header nav {position: fixed;right: -60%;top: 0;width: 60%;height: 100%;padding: 60px 0;color: #333;z-index: 999;overflow: auto;background: #FFF;}
+   #header nav .mo_logo {position: absolute;left: 10px;top: 8px;width: 96px;height: 36px;background: url(../img/main/dorco_razors-logo2.png) no-repeat center;background-size: contain;}
+   #header nav #gnb {border-top: 1px solid #CCC;}
+   #header nav #gnb a {padding: 0 10px;}
+   #header nav #gnb>li>a {position: relative;border-bottom: 1px solid #DDD;line-height: 44px;}
+   #header nav #gnb>li>a:after {content: "";display: block;position: absolute;right: 10px;top: 50%;transform: translateY(-50%);width: 10px;height: 6px;background: url(../img/main/lang_select.png);}
+   #header nav #gnb .dept2 {display: none;background: #eeeeee;}
+   #header nav #gnb .dept2>li {border-bottom: 1px solid #DDD;}
+   #header nav #gnb .dept2>li>a {padding: 5px 20px;font-size: 16px;line-height: 32px;}
+
+   #header nav .recruit_link {padding: 10px 10px;background: #FFF;border-bottom: 1px solid #CCC;font-size: 18px;line-height: 30px;}
+   #header nav .lang li {width: calc(33.33333% - 30px);padding: 30px 20px;float: left;text-align: center;opacity: 0.8;}
+   #header nav .lang li:last-child {padding: 30px 0;}
+   #header nav .lang li:after {content: "";display: block;width: 1px;height: 14px;margin-left: 35px;float: right;background: #DDD;}
+   #header nav .lang li:last-child:after {display: none;}
+
+   #header .mo_allmenu_wrap .allmenu_btn {display: block;position: absolute;right: 3%;top: 16px;width: 24px;height: 14px;cursor: pointer;z-index: 999;}
+   #header .mo_allmenu_wrap .allmenu_btn span {display: block;height: 2px;margin-bottom: 6px; background: #000;}
+
+   #header .mo_gnb_close {display: block;position: absolute;right: 6%;top: 16px;width: 24px;height: 14px;cursor: pointer;z-index: 999;}
+   #header .mo_gnb_close span {display: block;height: 2px;margin-bottom: 6px; background: #000;}
+   #header .mo_gnb_close .bar_top {transform: translate(0, 8px) rotate(-45deg);}
+   #header .mo_gnb_close .bar_middle {display: none;}
+   #header .mo_gnb_close .bar_bottom {transform: rotate(45deg);}
+
+   /*footer*/
+   #footer {margin-top: 100px;}
+   #footer .container {text-align: center;}
+   #footer .footer_logo {margin-top: 50px;float: none;}
+
+   #footer .footer_menu {margin-top: 50px;line-height: 24px;}
+   #footer .footer_menu .copyright {margin-top: 20px;}
+
+   #footer .sns_list {margin-top: 50px;text-align: center;}
+   #footer .sns_list li {display: inline-block;float: none;} 
+
+   /*Main - visual_wrap*/
+   #main .visual_wrap .main_slider .slider_box .slide {padding-top: 16%;}
+   #main .visual_wrap .main_slider .slider_box .slide_1 {overflow: hidden;}
+   #main .visual_wrap .main_slider .slider_box .slide_1 video {width: auto;height: 100%;}
+   #main .visual_wrap .main_slider .slider_box .slick-dots {bottom: 50px;}
+
+   #main .visual_wrap .main_slider .visual_txt p {font-size: 60px;line-height: 72px;}
+
+   /*Main - icon_wrap*/
+   .quick_menu_wrap {height: 150px;}
+   .quick_menu_wrap ul {padding: 30px 0;}
+   .quick_menu_wrap li {width: 25%;}
+   .quick_menu_wrap li:nth-child(3) {display: none;}
+
+   /*Main - product_wrap*/
+   .product_wrap .tabs {margin-top: 50px;margin-bottom: 100px;font-size: 24px;}
+
+   .product_wrap .product_line .list_box .product {width: calc(515px * 7);height: 620px;}
+   .product_wrap .product_line .list_box .product li {width: 515px;margin-right: 20px;}
+   .product_wrap .product_line .list_box .product li a strong {font-size: 32px;}
+   
+   .product_wrap .product_controls .product_prev {left: 0;}
+   .product_wrap .product_controls .product_next {right: 0;}
+  
+   /*Main - Clean Dorco*/
+   .clean_dorco_wrap h2 {padding-bottom: 70px;}
+
+   .clean_dorco_wrap ul {width: 840px;}
+   .clean_dorco_wrap li {width: calc(50% - 30px);margin-right: 30px;}
+   .clean_dorco_wrap ul li:nth-child(2n) {margin-right: 0;}
+   .clean_dorco_wrap ul li:nth-child(1) {margin-bottom: 30px;}
+   .clean_dorco_wrap ul li:nth-child(2) {margin-bottom: 30px;}
+   .clean_dorco_wrap li a span {line-height: 130px;}
+
+   /*Main - RECRUIT*/
+   .recruit_wrap .recruit_box {height: 170px;margin-bottom: 20px;}
+   
+   .recruit_wrap img {margin-top: 35px;margin-left: 135px;float: left;}
+   .recruit_wrap em {margin-right: 260px;margin-top: 63px;float: right;font-size: 32px;}
+
+   .recruit_wrap .recruit_notice {width: 250px;height: 80px;margin: 90px auto 0;border-radius: 10px;}
+   .recruit_wrap .recruit_notice span {line-height: 80px;}
+
+   /*Main - PRROOM*/
+   .pr_room_wrap p.news_explain {margin-top: 60px;margin-bottom: 100px;}
+
+   .pr_room_wrap .pr_room_box .news p {margin-top: 100px;font-size: 18px;}
+   .pr_room_wrap .pr_room_box .news span {margin-bottom: 60px;font-size: 16px;}
+
+}
+
+/*Mobile*/
+@media all and (max-width : 840px) {
+   /*Main - visual_wrap*/
+   #main .visual_wrap .main_slider .visual_txt p {font-size: 30px;line-height: 30px;}
+   #main .visual_wrap .main_slider .visual_txt strong {font-size: 60px;}
+
+   /*Main - product_wrap*/
+   .product_wrap .tabs .product_name li {margin: 0 30px;}
+   .product_wrap .tabs .product_name li:last-child {margin: 0;}
+
+   .product_wrap .product_line .list_box {width: 400px;}
+   .product_wrap .product_line .list_box .product {width: calc(400px * 7);}
+   .product_wrap .product_line .list_box .product li {width: 400px;}
+
+   /*Main - Clean Dorco*/
+   .clean_dorco_wrap p {display: none;}
+
+   .clean_dorco_wrap ul {width: 100%;text-align: center;}
+   .clean_dorco_wrap li {display: inline-block;margin-right: 20px;margin-bottom: 20px;float: none;}
+
+   /*Main - RECRUIT*/
+   .recruit_wrap .recruit_box {float: none;}
+
+   .recruit_wrap img {margin-left: 50px;float: left;}
+   .recruit_wrap em {margin-right: 100px;float: right;}
+
+   .recruit_wrap .recruit_notice span {font-size: 24px;}
+
+   /*Main - PRROOM*/
+   .pr_room_wrap .pr_room_box .slick-dots {position: absolute;left:50%;transform:translateX(-50%);}
+   .pr_room_wrap .pr_room_box .slick-dots li {float: left;}
+   .pr_room_wrap .pr_room_box .slick-dots li button {
+       width: 15px;height: 15px;margin: 20px 5px;
+       background: #DDD;border-radius: 50%;
+       text-indent: -9999px;
+   }   
+}
+
+/*
+	포인트 색상
+	color: #87ba41;
+*/

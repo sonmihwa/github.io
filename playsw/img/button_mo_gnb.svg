@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="20" viewBox="0 0 30 20">
+    <defs>
+        <style>
+            .prefix__cls-1{fill:#fff}
+        </style>
+    </defs>
+    <g id="prefix__그룹_1427" transform="translate(-322 -25)">
+        <g id="prefix__선_263_1_">
+            <path id="prefix__패스_3063" d="M351 27h-28a1 1 0 0 1 0-2h28a1 1 0 0 1 0 2z" class="prefix__cls-1" data-name="패스 3063"/>
+        </g>
+        <g id="prefix__선_264_1_">
+            <path id="prefix__패스_3064" d="M351 36h-28a1 1 0 0 1 0-2h28a1 1 0 0 1 0 2z" class="prefix__cls-1" data-name="패스 3064"/>
+        </g>
+        <g id="prefix__선_265_1_">
+            <path id="prefix__패스_3065" d="M351 45h-28a1 1 0 0 1 0-2h28a1 1 0 0 1 0 2z" class="prefix__cls-1" data-name="패스 3065"/>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,414 @@
+@charset "utf-8";
+
+/*font*/
+@font-face {
+   font-family: 'NanumSquareRound';
+   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NanumSquareRound.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+@font-face {
+   font-family: 'NanumSquareRoundB';
+   src: url(../fonts/NanumSquareRoundB.woff);
+}
+@font-face {
+   font-family: 'NanumSquareRoundEB';
+   src: url(../fonts/NanumSquareRoundEB.woff);
+}
+
+/*Common*/
+body {
+   font-family:  '나눔스퀘어라운드','NanumSquareRound',sans-serif;font-size: 18px;
+}
+button {
+   font: inherit;cursor: pointer;margin: 0;padding: 0;line-height: 1;vertical-align: middle;
+}/*button 태그는 글자에 관한 속성이 리셋되지 않기 때문에 리셋해준것*/
+.clrfix:after{
+   content: "";display: block;clear: both;
+} 
+/*예전에는 대부분의 요소들이 container 안에 들어있었지만 해당 홈페이지의 경우 container 크기가 다르기 때문에 container로 clear 할 수 없음 
+따라서 클리어가 필요한 경우 해당요소에 clirfix 클래스를 사용하여 클리어해줌*/
+.blind {
+   display: block;width: 0;height: 0;overflow: hidden;
+}
+
+/*skip_nav*/
+#skip_nav a {
+   position: absolute;left: 0;right: 0;top: -30px;background: #00eac8;text-align: center;line-height: 30px;color: #181f41;
+}
+#skip_nav a:focus {
+   top: 0;
+}
+
+/*header*/
+#header {
+   position: fixed;left:0;right: 0;top: 0;z-index: 999;
+} 
+/*position:fixed도 자손 높이값의 기준이 될 수 있음 (absolute의 기준이 될 수 있음)*/
+/*position의 경우 높이값이 사라지기 때문에 left 0 right 0을 줘서 화면에 꽉차게 만들어줌*/
+/*스크롤했을 때에도 사라지면 안 되기 때문에 z-index를 900값을 준 것 / 보통 일반적으로 가장 큰 값은 990이며 현재 홈페이지의 경우에는 로그인 modal이 최상위에 올라와야 함*/
+.header_inner {
+   width: 90%;max-width: 1360px;min-width: 1024px; margin: auto;padding: 16px 0;
+} /*width가 1360이면 1280유저는 넘쳐서 가로 스크롤이 생김 현재는 여백이 필요함으로 90%로 주고 최대 커질 때의 값 1360px과 가장 작아 졌을때의 크기를 태블릿 사이즈와 비슷한 크기의 1024 값을 줌*/
+/*min-width가 없다면 계속 줄이 바뀌고 gnb의 위치도 바뀌며 레이아웃이 제대로 보이지 않기 때문에 준 것*/
+#header h1 {
+   float: left;
+}
+#header h1 a {
+   display: block;width: 162px;height: 52px;background-image: url(../img/logo.svg);background-repeat: no-repeat;
+   background-size: 100% auto;
+} /*가로를 줄일 때 세로를 자동으로 줄이고 싶다면 auto를 주면 됨*/
+/*벡터용 svg이미지는 키워도 깨지지 않아서 기본 사이즈가 크기 때문에 size를 백그라운드로 꽉채운 것*/
+#header #gnb {
+   position: absolute;left: 50%;transform: translateX(-50%);color: #FFF;font-family: 'NanumSquareRoundB';
+}
+#header #gnb li {
+   margin: 0 16px;float: left;line-height: 48px;
+} /*라인 하이트는 세로방향의 중앙정렬이 되야 하기 때문에 가장 높이가 높은 버튼 크기로 라인 하이트를 준 것*/
+#header .btn_login {
+   float: right;width: 100px;height: 48px;background-image: url(../img/button_login_white.png);background-size: 100% auto !important;
+   background-repeat: no-repeat;color: #00eda9;font-size: 14px;
+}  
+/*원래 이미지 크기와 높이는 200px에 96px이었는데 디자인 시안은 100px에 48px이기 때문에 width와 heigh를 반값으로 작성하고 backgroung-size를 100%로 작성하면 박스 사이즈를 따라가기 때문에 반으로 줄어들며 세로값 auto를 작성하면 비례하여 줄어듦*/
+
+/*페이지 스크롤 됐을 때 header의 스타일*/
+#header.header_fix {
+   background: #FFF;
+}
+#header.header_fix a {
+   background-image: url(../img/logo_black.svg);background-repeat: no-repeat;
+}
+#header.header_fix #gnb {
+   color: #000;
+}
+#header.header_fix .btn_login {
+   background-image: url(../img/button_login_black.png);background-repeat: no-repeat;color: #3d46ff;
+}
+/* 자바스크립트에서 조건문을 줄 때 .header_fix라는 클래스를 사용하기 위해 미리 선언해 둔 것*/
+/* css는 적용 할 때 우선순위가 있음 / class는 누구나 사용할 수 있지만 id는 한 번만 사용할 수 있음 다만 header라는 아이디로 위쪽에서 이미 스타일을 적용했기 때문에 id와 클래스를 함께 작성해서 선언한다면 이 경우 더 우선적으로 적용될 수 있음 */
+
+
+.goEntry {
+   display: block;position: fixed;right: 50px;bottom: 35px;z-index: 900px;padding: 20px 45px;border-radius: 65px;
+   background: #6e5ae6;font-family: 'NanumSquareRoundEB';font-size: 18px;color: #FFF;box-shadow: 3px 5px 5px rgba(0,0,0,0.3);
+}
+.goEntry img {
+   vertical-align: middle;
+}
+
+
+
+/*footer*/
+#footer {
+   padding: 60px 0;background: #f7f7f7;
+}
+#footer .footer_inner {
+   position: relative;
+   width: 1200px;margin: auto;font-family: 'NanumSquareRoundB';line-height: 2em; font-size: 14px;color: #616f6f;
+}
+#footer .corp_info .footer_logo {
+   display: block;margin-right: 198px;float: left;
+}
+#footer .corp_info .info_1 {width: 400px;float: left;}
+#footer .corp_info .info_2 {width: 400px;float: left;} 
+#footer .corp_info .footer_title {
+   font-family: 'NanumSquareRoundEB';color: #181f41;
+}
+
+#footer .footer_content {
+   padding: 60px 0;
+}
+
+#footer .footer_content .sns_list {
+   width: 400px;float:right;text-align: right;
+} /*오른쪽에 맞추기 위해 플롯을 줬는데, 상단에서 포지션 속성을 줬기 때문에 플롯을 지우고 right 값만 주면 됨*/
+#footer .footer_content .sns_list li {
+   display: inline-block;margin-left: 10px;
+}
+#footer .footer_content .sns_list img {
+   display: block;
+} /*포지션을 시키면 인라인 속성의 여백이 생기는 문제가 발생하기 때문에 디스플레이를 블럭 속성으로 바꿔줌*/
+
+#footer .footer_content .footer_menu {
+   width: 400px;float: right;
+}
+#footer .footer_content .footer_menu li {
+   margin-right: 20px;float: left;
+}
+#footer .footer_content .footer_menu li:nth-child(2) {
+   font-family: 'NanumSquareRoundEB';
+}
+
+#footer .footer_content .copyright {
+   float: left;font-size: 12px;color: #181f41;
+}
+
+
+
+
+
+/*Main*/
+/*메인 비주얼*/
+.main_slider_wrap {
+   position: relative;height: 850px;color: #FFF;
+} /*전체행의 높이값을 주고 버튼들이 포지션 될 때 기준이 되기위해 포지션 속성을 준 것*/
+.main_slider_wrap .slide_container {
+   width: 1200px;margin: auto;position: relative;
+} /*1200안에서 가운데 정렬을 위한 값 / 버튼을 포지션 할 때 컨테이너 안에서 기준이 되기 위해 포지션 속성을 준 것*/
+.main_slider_wrap .main_slider {
+   /*width: 200vw;*/
+}
+.main_slider_wrap .main_slider .slide_box {
+  /*width: 100vw;*/height: 850px; float: left;
+} /*100vw 단위는 가로스크롤이 생기는데 이는 세로 스크롤의 너비*/
+/*width: clac(100vw - (100vw - 100%));
+100vw는 스크롤을 포함 = 32px 
+화면 전체의 해상도 1920 = vw 
+1920 - 32 = 1890 = 100vw
+1920-1890 = 32이기 때문에 스크롤 크기만큼 빼주는 계산법
+*/
+
+.main_slider_wrap .main_slider .slide_box a {
+   display: block;margin-top: 270px;float: left;
+} /*블럭처리하면 꽉 채워지기 때문에 자손의 width로 바뀌는 float을 준 것*/
+.main_slider_wrap .main_slider .slide_box strong {
+   display: block;margin-bottom: 50px;font-size: 74px;font-family: 'NanumSquareRoundEB'; color: #00eda9;line-height: 1.2em;
+} /*스트롱과 p 사이의 여백이 필요해서 여백값을 준 것*/
+.main_slider_wrap .main_slider .slide_box p {
+   font-size: 22px;line-height: 1.5em;
+}
+.main_slider_wrap .main_slider .slide1 {
+   background: #3d46ff url(../img/bg_main_spot_01.png) no-repeat;background-size: auto 100%;
+} /*세로가 길기 때문에 세로를 100% 주고 가로값은 auto를 준 것*/
+.main_slider_wrap .main_slider .slide2 {
+   background: #181f41 url(../img/bg_m_main_spot_ai_world.png) no-repeat left 520px bottom 80px;background-size: auto 655px;
+}/*아래쪽에서 떨어진 값, 왼쪽에서 떨어진 값으로 위치를 잡아준 것*/
+
+.slider_controls {
+   position: absolute;left: 0;right: 0;bottom: 80px;background: rgba(0,0,0,0.5);
+} /*버튼박스 두개를 포함하고 있는 부모 / 버튼에게 직접 기준으로 잡으면 컨테이너 좌우로 잡을 수 없기 때문에 제일 큰 부모 기준으로 아래쪽에서 80px떨어지게 만든 것*/
+
+.slider_controls .paging {
+   position: absolute;left: 0;bottom: 0;
+} /*포지션의 기준은 컨테이너 / 컨테이너의 왼쪽 0이며 버텀이 0인 이유는 이미 부모 슬라이더 컨트롤스가 아래에서 80px 떨어져 있기 때문*/
+/*플롯을 시키면 부모가 자손 크기로 높이값이 바뀌는데 제일 막내인 .dir_btns의 높이값이 60px이기 때문에 부모의 높이값이 60px이 됨 그렇게 되면 페이지의 버튼이 왼쪽 상단에 올라가버림 디자인 시안에서 버튼은 하단에 있어야 하기 때문에 플롯이 아닌 포지션 값을 준 것*/
+.slider_controls .paging button {
+   width: 10px;height: 10px;background: #fefefe;border-radius: 5px;
+} /*가로 10 세로 10인데 반지름인 5px 값을 주면 모서리가 그만큼 둥글어짐*/
+.slider_controls .paging .page_on {
+   width: 36px;background: #00eda9;
+}
+
+.slider_controls .dir_btns {
+   position: absolute;right: 0;bottom: 0;
+}
+.slider_controls .dir_btns button {
+   width: 60px;height: 60px;
+}
+.slider_controls .dir_btns .btns_prev {
+   background-image: url(../img/button_main_slide_pre.svg);
+}
+.slider_controls .dir_btns .btns_next {
+   background-image: url(../img/button_main_slide_next.svg);
+}
+#main section h3 {
+   font-family: 'NanumSquareRoundEB';margin-bottom: 30px;font-size: 40px;line-height: 1.2em;
+}
+#main section p {
+   font-family: 'NanumSquareRoundB';line-height: 1.5em;color: #666;font-size: 20px;margin-bottom: 60px;
+}
+/*스타일이 똑같은 것은 section이라는 공통이름으로 묶음*/
+#main section .btn_link {
+   display: block;width: 180px;height: 52px;background: #92f5d9;border-radius: 26px;
+   font-family: 'NanumSquareRoundEB';text-align: center;line-height: 52px;font-size: 16px;
+}
+#main section .btn_link:hover {
+   background: #00eca8;
+}
+#main section .list_box {
+   margin-bottom: 40px;
+}
+#main section .btn_list_box {
+   margin-right: 120px; padding: 12px 15px; float: right;border: 1px solid #999;border-radius: 25px;
+   background: #FFF;
+}/*정원이 아닌 모서리가 살짝 둥근 원통모양을 만들기 위해서는 높이값의 반절만큼의 보더 래디우스 값을 줘야함*/
+#main section .btn_list_box button.btn_left {
+   margin-right: 5px;
+}
+
+
+
+#main .why_ai_data {
+   height: 800px;
+   background-image: linear-gradient(to bottom, #00eca8,#FFF 60%);
+}
+#main .why_ai_data .inner {
+   width: 1200px;margin: auto;padding-top: 240px;
+}
+#main .hello_ai {
+   padding: 110px 0 200px 0; text-align: center;
+}
+#main .hello_ai .inner {
+   width: 990px;margin: auto;
+}
+#main .hello_ai h3 {
+   margin-bottom: 80px;font-size: 70px;
+}
+#main .hello_ai p {
+   margin-bottom: 30px;font-size: 24px;
+}
+#main .hello_ai .btn_link {
+   margin: 0 auto 120px auto;
+}/*블럭속성이라 마진 오토를 줘야 가운데로 옴*/
+/*위쪽으로 여백 필요 없고 좌우는 가운데 정렬, 아래쪽은 120px떨어짐*/
+
+#main .hello_ai video {
+   width: 100%;
+}
+
+
+
+#main .sw_edu {
+
+} 
+/*좌우로 길게 보이는데 그런 경우 가로 스크롤이 생기지 않기 위해 오버플로우 히든을 해야 함 그렇게 되면 가로스크롤이 생기지 않음 
+이너에게 오버플로우 히든을 주면 오른쪽 끝도 안 보이고 sw_edu에게 오버플로우 히든을 주면 가로로 지나가는 모습이 보이게 됨
+이 상황은 한쪽만 마스크를 주고 한 쪽은 마스크를 주면 안 되는 문제가 발생함
+*/
+#main .sw_edu .inner {
+   margin-left: 120px;overflow: hidden;
+} /*왼쪽의 값을 마진값으로 고정을 시켜놓음*/
+#main .sw_edu .title_box {
+   width: 420px; float: left;
+} /*list-box와 title_box 둘 다 플롯시키면 동생인 listbox의 가로길이가 매우 길기 때문에 아래로 내려감*/
+/*형인 title_box만 플롯시키면 동생은 형의 뒤로 가기 때문에 줄이 바뀌지 않아 이 문제를 해결할 수 있음*/
+#main .sw_edu .list_box {
+   padding-left: 420px;
+}
+#main .sw_edu .list_box ul {
+   width: calc(420px * 6);
+} /*반응형때문에 사용하는 함수형태의 값 / 
+값과 연산자는 띄어쓰기를 해야함 / 
+li 한 개 크기와 마진까지 한 개의 width 크기는 420px *(곱하기 /사이에 띄어쓰기 꼭 해야 함) 6(li의 개수)*/
+#main .sw_edu .list_box li {
+   width: 360px;margin-right: 60px;float: left;font-family: 'NanumSquareRoundB';
+} 
+#main .sw_edu .list_box li:last-child {
+   margin-right: 0;
+}
+#main .sw_edu .list_box li img {
+   width: 100%;margin-bottom: 22px;
+}
+/*만약 보더가 있다면 이미지는 보더에 꽉 채워서 만들어야 하지만 텍스트는 패딩을 줘서 간격을 띄워줘서 만들어야 함*/
+/*보더가 없는 현재와 같은 디자인일 경우 여백을 적게 주면 글씨의 간격이 너무 가까워지기 때문에 마진을 넓게 줘야함*/
+#main .sw_edu .list_box li strong {
+   font-family: 'NanumSquareRoundEB';font-size: 20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+}
+#main .sw_edu .list_box li p {
+   margin: 12px 0;font-size: 18px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;
+}
+#main .sw_edu .list_box li .video_time {
+   color: #434dfe;
+}
+#main .sw_edu .list_box li .video_time:before {
+   content: url(../img/ico_time.svg);margin-right: 5px; vertical-align: middle;
+} /*가상클래스에 이미지도 넣을 수 있음*/
+
+
+
+#main .news_stroy {
+   padding: 150px 0;
+}
+#main .news_stroy .inner {
+   margin-left: 120px;overflow: hidden;
+}
+#main .news_stroy h3 {
+   text-align: center;
+}
+#main .news_stroy p {
+   text-align: center;
+}
+#main .news_stroy .btn_link {
+   margin: 0 auto 120px auto;
+}
+#main .news_stroy .list_box ul {
+   width: calc(420px * 5);
+}
+#main .news_stroy .list_box li {
+   width: 360px;margin-right: 60px; float: left;font-family: 'NanumSquareRoundB';font-size: 20px;
+} 
+#main .news_stroy .list_box li img {
+   width: 100%;margin-bottom: 22px;
+} 
+#main .news_stroy .list_box li span.category {
+   display: block;margin-bottom: 10px;color: #434dfe;
+}
+#main .news_stroy .list_box li p {
+   margin-bottom: 20px;color: #000;text-align: left;
+}
+#main .news_stroy .list_box li:hover p {
+   color: #434dfe;
+}
+#main .news_stroy .list_box li span.date {
+   color: #999;
+}
+
+/*PC*/
+@media screen and (min-width: 1024px) {
+   #header .mo_close, #header .mo_open, .mobile_br {display: none;}
+
+}
+
+/*Tablet*/
+@media screen and (max-width: 1023px) {
+   .pc_br {display: none;}
+   #header .mo_open {display: block;position: absolute;right: 20px;top: 20px;}
+
+   .header_inner {min-width: auto;}
+   #header nav {position: fixed;right: -300px;top: 0;width: 250px;height: 100%;padding: 20px;background: #434dfe;z-index: 1;box-sizing: border-box;}
+   #header .mo_gnb_bg {position: fixed;left: 0;right: 0;top: 0;bottom: 0;background: rgba(0,0,0,0.8);}
+   #header .btn_login {float: left;}
+   #header .mo_close {float: right;margin-top: 10px;}
+   
+   #header #gnb {left: 20px;top: 50%;transform: translate(0, -50%);}
+   #header #gnb li {float: none;}
+
+   /*footer*/
+   #footer .footer_inner {width: 90%;}
+   #footer .corp_info .footer_logo{margin-right: 0;margin-bottom: 30px;float: none;}
+   #footer .corp_info .info_1, #footer .corp_info .info_2 {width: 400px;margin-bottom: 40px;}
+
+   #footer .footer_content {padding: 20px 0 60px 0;}
+   #footer .footer_content .sns_list {position: absolute;right: 0;top: 0;width: auto;}
+
+   #footer .footer_content .footer_menu {width: auto;margin-bottom: 20px;float: none;overflow: hidden;}
+   #footer .footer_content .copyright {float: none;}
+
+   /*hello AI*/
+   #main .hello_ai .inner {width: 90%;}
+}
+
+/*Mobile*/
+@media screen and (max-width: 500px) {
+   /*why_ai*/
+   #main .why_ai_data .inner {width: 90%;text-align: center;}
+
+   /*sw_edu*/
+   #main .sw_edu .inner {position: relative;margin-left: 0;padding-bottom: 70px;}
+   #main .sw_edu .title_box {width: auto;margin-bottom: 20px;float: none;text-align: center;}
+   #main .sw_edu .list_box {padding-left: 5%;}
+   .btn_list_box {display: none;}
+   .btn_link {position: absolute;left: 50%;transform:translateX(-50%);bottom: 0;}  
+
+   /*news_story*/
+   #main .news_stroy .inner {position: relative;margin-left: 0;padding-bottom: 80px;}
+   #main .news_stroy .btn_link {margin: 0;}
+   #main .news_stroy .list_box  {padding-left: 5%;}
+
+
+
+   /*footer*/
+   #footer .footer_content .footer_menu li {margin-bottom: 10px;float: none;}
+   #footer .footer_content .sns_list {position: static;margin-bottom: 20px;float: none;text-align: left;}
+   #footer .footer_content .sns_list li {margin-right: 10px;}
+}
