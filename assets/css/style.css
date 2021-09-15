@@ -680,19 +680,6 @@ textarea::-ms-input-placeholder{
     padding: 5px;
 }
 
-/*for image bg*/
-/* .img-bg{
-  background: url(../images/home-msg.jpg) no-repeat center top fixed;
-  background-size
-  -moz-background-size: cover;
-  -webkit-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  width: 100%;
-  overflow: hidden;
-} */
-
-
 .transform_scal_rotate:hover img{ 
     -webkit-transform: scale(1.1) rotate(4deg); 
     transform: scale(1.1) rotate(4deg); 
@@ -894,7 +881,7 @@ Home Section style
 ==================*/
 
 .home{
-    background: url(../images/milky-way-984050_1920.jpg) no-repeat top center;
+    background: url(../images/home_main.jpg) no-repeat top center;
     background-size: cover;
     position: relative;
     padding-top: 300px;
@@ -1358,4 +1345,22 @@ Skill Section style
 .widget_latst_item_text p{
     margin-bottom: 0px;
     color:#aaaaaa;
+}
+
+.footer .blind {
+    width: 0;
+    height: 0;
+    display: none;
+    overflow: hidden;
+}
+.footer li a {
+    color: #797979;
+    text-decoration: none;
+}
+.footer .github {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/github_white_icon.png) no-repeat center;
+    text-align: center;
 }
