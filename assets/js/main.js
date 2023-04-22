@@ -1,10 +1,6 @@
 "use strict";
 jQuery( document ).ready( function ( $ ) {
 
-
-//isotope
-$('.grid').isotope();
-
 //for Preloader
 
     $( window ).load( function () {
@@ -138,6 +134,7 @@ $( function () {
         $notes.isotope( {
             filter: $this.attr( "data-filter" )
         } );
+
     } );
 
 
@@ -153,4 +150,27 @@ $( function () {
 } );
 
 
+// TO-TOP
+const toTopEl = document.querySelector('#to-top');
+toTopEl.style.opacity = 0;
+window.addEventListener('scroll', function() {
+    console.log(window.scrollY);
+    if (window.scrollY > 200) {
+        gsap.to(toTopEl, .2, {
+            x: 0,
+            opacity: 1 
+        });
+    } else {
+        gsap.to(toTopEl, .2, {
+            x: 100,
+            opacity: 1 
+        });
+    }
+}, 300);
+
+toTopEl.addEventListener('click', function() {
+    gsap.to(window, 0.7, {
+      scrollTo: 0
+    });
+  });
 
